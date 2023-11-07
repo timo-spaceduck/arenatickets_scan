@@ -1,0 +1,52 @@
+{
+  "name": "arenaticketsscan",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.9",
+    "@react-native-community/netinfo": "^9.3.0",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.7.0",
+    "@reduxjs/toolkit": "^1.8.3",
+    "expo": "^46.0.0",
+    "expo-secure-store": "~11.3.0",
+    "moment": "^2.29.4",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
+    "react": "18.0.0",
+    "react-native": "0.69.3",
+    "react-native-camera": "^4.2.1",
+    "react-native-device-info": "^10.0.2",
+    "react-native-dotenv": "^3.3.1",
+    "react-native-localization": "^2.3.1",
+    "react-native-permissions": "^3.6.0",
+    "react-native-qrcode-scanner": "^1.5.5",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "^3.15.0",
+    "react-native-select-dropdown": "^3.3.2",
+    "react-redux": "^8.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "deprecated-react-native-prop-types": "^2.3.0",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.70.3",
+    "react-test-renderer": "18.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
