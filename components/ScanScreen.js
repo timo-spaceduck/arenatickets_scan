@@ -56,9 +56,9 @@ const ScanScreen = ({navigation}) => {
       startScan();
     }
     start().then();
-    setTimeout(() => {
-      scanned({data: '0000007040543'});
-    }, 1000);
+    // setTimeout(() => {
+    //   scanned({data: '0000007040543'});
+    // }, 1000);
   }, [navigation, event, netInfo]);
 
   useEffect(() => {
