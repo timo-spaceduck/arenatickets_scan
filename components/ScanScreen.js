@@ -56,6 +56,9 @@ const ScanScreen = ({navigation}) => {
       startScan();
     }
     start().then();
+    setTimeout(() => {
+      scanned({data: '0000007040543'});
+    }, 1000);
   }, [navigation, event, netInfo]);
 
   useEffect(() => {
@@ -86,8 +89,9 @@ const ScanScreen = ({navigation}) => {
     setTimeout(() => {
       setJustScanned(false);
     }, 500);
-    console.log('scanned', code.data);
+    // console.log('scanned', code.data);
     let ticketFound = tickets.find(t => t.barcode == code.data);
+    // console.log(ticketFound);
     setSearched(true);
     setTicket(ticketFound);
     if (!ticketFound) {

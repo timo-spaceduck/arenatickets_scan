@@ -102,7 +102,7 @@ const scanStyles = StyleSheet.create({
   },
   modalSectionText: {
     fontSize: 20,
-    flex: 1,
+    // flex: 1,
     flexWrap: 'wrap',
     color: '#817D8E',
     fontWeight: '500',

@@ -11,8 +11,8 @@ import {Provider} from 'react-redux';
 import {useSelector, useDispatch} from 'react-redux';
 import {deleteTokenThunk, logout, setUser} from '../store/auth.store';
 import {apiGetProfile} from '../services/fetch.service';
-import i18n from "../services/localization";
-import EventScreen from "./EventScreen";
+import i18n from '../services/localization';
+import EventScreen from './EventScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,7 +70,7 @@ const App: () => Node = () => {
               options={{
                 title: '',
                 headerShown: false,
-                orientation: 'portrait_up'
+                orientation: 'portrait_up',
               }}
               component={EventScreen}
             />
@@ -79,7 +79,7 @@ const App: () => Node = () => {
               options={{
                 title: '',
                 orientation: 'portrait_up',
-                headerShown: false
+                headerShown: false,
                 // headerTransparent: true,
               }}
               component={ScanScreen}
@@ -92,7 +92,7 @@ const App: () => Node = () => {
               options={{
                 title: '',
                 orientation: 'portrait_up',
-                headerShown: false
+                headerShown: false,
               }}
               component={LoginScreen}
             />

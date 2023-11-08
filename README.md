@@ -5,7 +5,7 @@ yarn react-native start
 npx react-native run-ios
 npx react-native run-android
 
-source ~/.bash_profile 
+source ~/.bash_profile
 adb devices
 
 iOS autolinking: // after each library install

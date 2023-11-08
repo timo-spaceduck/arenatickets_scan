@@ -107,7 +107,7 @@ const ScanResult = ({
                   {ticket.fullSeatName}
                 </Text>
                 <Text style={scanStyles.modalSectionHeader}>
-                  {ticket.price} MDL
+                  {ticket.price} KZT
                 </Text>
               </View>
             ) : null}
@@ -117,8 +117,10 @@ const ScanResult = ({
               </Text>
             </View>
             <View style={scanStyles.modalSectionLine}>
-              <Text style={scanStyles.modalSectionText}>{i18n.event_name}</Text>
-              <Text style={scanStyles.modalSectionText}>
+              <Text style={[scanStyles.modalSectionText, {}]}>
+                {i18n.event_name}
+              </Text>
+              <Text style={[scanStyles.modalSectionText, {}]}>
                 {event.show.title.ru}
               </Text>
             </View>
@@ -184,7 +186,7 @@ const ScanResult = ({
           </View>
         )}
 
-        <View style={{paddingBottom: 32}}>
+        <View style={{paddingBottom: 32, paddingLeft: 20, paddingRight: 20}}>
           <TouchableOpacity
             onPress={requestClose}
             style={[

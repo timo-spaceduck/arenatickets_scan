@@ -102,7 +102,7 @@ const EventListScreen = ({navigation}) => {
     <TouchableOpacity onPress={onPress} style={eventStyles.cell}>
       <View style={{flexDirection: 'row'}}>
         <Image
-          source={{uri: item.teaser}}
+          source={{uri: item.show.teaser}}
           style={{width: 156, height: 130, borderRadius: 12}}
         />
         <View style={{marginLeft: 20, width: '100%', flex: 1}}>

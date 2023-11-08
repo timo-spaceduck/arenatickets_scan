@@ -1,6 +1,6 @@
 import {API_URL, UNAUTHORIZED_TOKEN} from '@env';
 import {getToken} from './token.service';
-import i18n from "./localization";
+import i18n from './localization';
 
 const apiLogin = async (email, password) => {
   return await request('auth/login', 'POST', {
@@ -14,7 +14,7 @@ const apiGetProfile = async () => {
   if (!token) {
     return null;
   }
-  return await request('profile', 'GET');
+  return await request('auth/user', 'GET');
 };
 
 const apiLoadEvents = async () => {
@@ -60,7 +60,7 @@ const request = async (endpoint, method = 'GET', body = {}) => {
     Accept: 'application/json',
     'Content-Type': 'application/json',
     'Accept-language': i18n.getLanguage(),
-    'X-API-KEY': UNAUTHORIZED_TOKEN,
+    'X-API-TOKEN': UNAUTHORIZED_TOKEN,
   };
   const token = await getToken();
   if (token) {
@@ -73,23 +73,23 @@ const request = async (endpoint, method = 'GET', body = {}) => {
   if (method === 'POST') {
     requestOptions.body = JSON.stringify(body);
   }
-  console.log(endpoint);
+  // console.log(requestOptions, endpoint, API_URL);
   try {
     let res = await fetch(`${API_URL}${endpoint}`, requestOptions);
     if (res.ok) {
-      console.log(
-        res.headers.map['x-ratelimit-remaining'],
-        ' / ',
-        res.headers.map['x-ratelimit-limit'],
-      );
+      // console.log(
+      //   res.headers.map['x-ratelimit-remaining'],
+      //   ' / ',
+      //   res.headers.map['x-ratelimit-limit'],
+      // );
       return await res.json();
     }
-    console.log(res.status);
-    console.log(
-      res.headers.map['x-ratelimit-remaining'],
-      ' / ',
-      res.headers.map['x-ratelimit-limit'],
-    );
+    // console.log(res.status);
+    // console.log(
+    //   res.headers.map['x-ratelimit-remaining'],
+    //   ' / ',
+    //   res.headers.map['x-ratelimit-limit'],
+    // );
     try {
       return await res.json();
     } catch (err) {

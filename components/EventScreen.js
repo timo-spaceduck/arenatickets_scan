@@ -43,11 +43,11 @@ const EventScreen = ({navigation}) => {
           justifyContent: 'space-between',
         },
       ]}>
-      <View style={{flexGrow: 1}}>
+      <View style={{display: 'flex', flexGrow: 1}}>
         <BackBtn navigation={navigation} />
         <Image
-          source={{uri: event.banner}}
-          style={{width: '100%', flexGrow: 1}}
+          source={{uri: event.show.main}}
+          style={{flexGrow: 1, resizeMode: 'cover'}}
         />
       </View>
       <View style={styles.container}>
@@ -84,7 +84,14 @@ const EventScreen = ({navigation}) => {
           )}
         </View>
       </View>
-      <View style={{flex: 0, paddingBottom: 30, marginTop: 30}}>
+      <View
+        style={{
+          flex: 0,
+          paddingLeft: 20,
+          paddingEnd: 20,
+          paddingBottom: 30,
+          marginTop: 30,
+        }}>
         <TouchableOpacity onPress={startScan} style={styles.btnThemed}>
           <Text style={styles.btnThemedTitle}>{i18n.start_scan}</Text>
         </TouchableOpacity>
